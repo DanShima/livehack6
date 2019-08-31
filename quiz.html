@@ -65,7 +65,25 @@ body {
 }
 
 
+h1 {
+  color: white;
+}
 
+button {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 24px;
+  background: #47C070;
+  color: white;
+}
 
 
 
@@ -79,9 +97,26 @@ body {
 
   <div class="slider-container">
 
+    <div class="slide slide0">
+        <h1>
+            It's quiz time!
+            </h1>
+        <br>
+            
+            <input id="name-input" type="text" name="firstname" placeholder="Type your name:">
+            <br>
 
 
-    <div class="slide slide1">
+
+            <Button id="start-button">
+            Let's start
+            </Button>
+
+    </div>
+
+
+
+    <div class="slide slide1 hide">
      
         <div class="outer">
         <div class="inner">
@@ -200,6 +235,29 @@ body {
 
 
   <script>
+
+var startButton = document.getElementById("start-button");
+
+
+var usersName = "";
+
+console.log(startButton);
+
+
+
+startButton.addEventListener("click", () => {
+      var name = document.querySelector("#name-input");
+      usersName = name.value;
+
+
+      document.querySelector(".slide0").classList.add("hide");
+      document.querySelector(".slide1").classList.remove("hide");
+
+
+    })
+
+
+
     var allAnswers = [];
     var answerButtons = document.getElementsByClassName("answer-button");
     var slides = document.getElementsByClassName("slide");
