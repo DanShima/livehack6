@@ -16,8 +16,34 @@
 <body>
 
 
-  
+    <form id="form1">
 
+        <h2>Tool</h2>
+        <label for="var_string"><input type="radio" name="variable" value="0" id="var_string" />Apple</label>
+        <label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Windows</label>
+        <label for="var_info"><input type="radio" name="variable" value="" id="var_info" />Linux</label>
+        
+        <h2>Food</h2>
+        <label for="sub_string"><input type="radio" name="sub" value="25" id="sub_string"/>Noodles</label>
+        <label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/>Pizza</label>
+        <label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Ice cream</label>
+        
+        <h2>Favorite Date</h2>
+        <label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />Club</label>
+        <label for="cat_join"><input type="radio" name="con" value="25" id="cat_join" />Movie</label>
+        <label for="cat_info"><input type="radio" name="con" value="0" id="cat_info" />Museum</label>
+        <label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />Fika</label>
+        
+        <h2>Video games?</h2>
+        <label for="if_string"><input type="radio" name="ifstate" value="0" id="if_string" />Y</label>
+        <label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" />N</label>
+        
+
+
+        
+        <button type="submit" value="Submit">Submit</button>
+        
+        </form>
 
 
 
@@ -29,6 +55,7 @@
 
   <script>
 
+    
     class Quiz {
       constructor() {
         this._answers = [];
