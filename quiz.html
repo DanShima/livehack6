@@ -239,12 +239,12 @@ button:hover {
       <div class="slide slide6 hide">
           <div class="outer">
               <div class="inner">
-          <h1>#6 HACKATHONS?</h1>
+          <h1>#6 BDSM?</h1>
           </div>
           </div>
             <button data-answer="a" data-question="music" data-next="7" class="answer-button">Yes</button>
             <button data-answer="b" data-question="music" data-next="7" class="answer-button">No</button>
-            <button data-answer="c" data-question="music" data-next="7" class="answer-button">Don't care</button>
+            <button data-answer="c" data-question="music" data-next="7" class="answer-button">B...whut?</button>
       
       
         </div>
@@ -296,22 +296,11 @@ button:hover {
                     <h1 id="waitText">WAIT...</h1>
                     <div id="showMe">HELLOW!</div>
                   </div>
-
-                  <img src="./Img/CrocDoctor1.png" alt="If you can see this, then the image didn't load properly" class="myclass1" />
+                  <script type="image">
+                    document.write(picture)
+                  </script>
+                  
             </div>
-
-
-            <!-- <div class="slide slide10 hide">
-              <div class="wait">
-                  <h1 id="waitText">WAIT...</h1>
-                  <h1 id="imageMatch">HELLOW!</h1>
-                </div>
-          </div> -->
-
-          
-            
-
-            
   </div>
 
 
@@ -323,6 +312,13 @@ var startButton = document.getElementById("start-button");
 var usersName = "";
 
 console.log(startButton);
+
+var myPix = new Array("Img/CrocDoctor1.png","Img/CrocDoctor2.png","Img/CrocHunter1.png");
+
+var picture = function choosePic() {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     document.getElementById("imageMatch").src = myPix[randomNum];
+}
 
 
 
@@ -388,31 +384,31 @@ startButton.addEventListener("click", () => {
 
 
 
-    var theImages = new Array() // do not change this
-    // To add more image files, continue with the
-    // pattern below, adding to the array.
+    // var theImages = new Array() // do not change this
+    // // To add more image files, continue with the
+    // // pattern below, adding to the array.
 
-    theImages[0] = 'CrocDoc1.png'
-    theImages[1] = 'CrocDoc2.png'
-    theImages[2] = 'CrocHunter1.png'
-    theImages[3] = 'CrocHunter2.png'
+    // theImages[0] = 'CrocDoc1.png'
+    // theImages[1] = 'CrocDoc2.png'
+    // theImages[2] = 'CrocHunter1.png'
+    // theImages[3] = 'CrocHunter2.png'
 
-    // do not edit anything below this line
+    // // do not edit anything below this line
 
-    var j = 0
-    var p = theImages.length;
-    var preBuffer = new Array()
-    for (i = 0; i < p; i++){
-      preBuffer[i] = new Image()
-      preBuffer[i].src = theImages[i]
-    }
-    var whichImage = Math.round(Math.random()*(p-1));
+    // var j = 0
+    // var p = theImages.length;
+    // var preBuffer = new Array()
+    // for (i = 0; i < p; i++){
+    //   preBuffer[i] = new Image()
+    //   preBuffer[i].src = theImages[i]
+    // }
+    // var whichImage = Math.round(Math.random()*(p-1));
 
 
 
-    function showImage(){
-    document.write('<img src="'+theImages[whichImage]+'">');
-    }
+    // function showImage(){
+    // document.write('<img src="'+theImages[whichImage]+'">');
+    // }
 
   </script>
 </body>
