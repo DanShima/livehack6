@@ -2,84 +2,340 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-    <style>
-        .test {
-            color: red;
-        }
-
-
-    </style>
+ 
 </head>
+
+<style>
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    border-box
+  }
+
+
+  *:not(.classname){
+  box-sizing : border-box;
+}
+
+body {
+  background: #cfe5cc;
+  color: #fff;
+}
+
+
+
+.slider-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.border {
+  border: solid red 2px;
+}
+
+
+.slide {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.outer {
+  border-radius: 15px;
+  background-color: salmon;
+  height: 500px;
+  margin: 0 auto;
+
+}
+
+.inner {
+
+  border-radius: 15px;
+  background-color: salmon;
+
+
+
+}
+
+.hide {
+  display: none;
+}
+
+
+h1 {
+  color: white;
+}
+
+button {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 24px;
+  background: #47C070;
+  color: white;
+}
+
+.slide0 {
+  padding: 50px;
+}
+
+.first-h1 {
+  font-size: 100px;
+  font-family: monospace;
+}
+
+#name-input {
+  width: 80%;
+  height: 80px;
+  font-size: 50px;
+}
+
+#start-button {
+  width: 600px;
+  height: 100px;
+  font-size: 100px;
+}
+
+
+
+
+
+
+</style>
 
 <body>
 
 
-    <form id="form1">
+  <div class="slider-container">
 
-        <h2>Tool</h2>
-        <label for="var_string"><input type="radio" name="variable" value="A" id="var_string" />Apple</label>
-        <label for="var_join"><input type="radio" name="variable" value="B" id="var_join" />Windows</label>
-        <label for="var_info"><input type="radio" name="variable" value="C" id="var_info" />Linux</label>
+    <div class="slide slide0">
+        <h1 class="first-h1">It's quiz time!</h1>
+        <br>
+            
+            <input id="name-input" type="text" name="firstname" placeholder="Type your name:">
+            <br>
+
+
+
+            <Button id="start-button">
+            Let's start
+            </Button>
+
+    </div>
+
+
+
+    <div class="slide slide1 hide">
+     
+        <div class="outer">
+        <div class="inner">
+          <h1>1 tools</h1>
+        </div>
+      </div>
+        <button data-answer="a" data-question="tool" data-next="2" class="answer-button btn-1 icon-forward">A</button>
+        <button data-answer="b" data-question="tool" data-next="2" class="answer-button btn-1 icon-forward">B</button>
+        <button data-answer="c" data-question="tool" data-next="2" class="answer-button btn-1 icon-forward">C</button>
+
+
+
+
+    </div>
+
+    <div class="slide slide2 hide">
+      <div class="outer">
+        <div class="inner">
+          <h1>2 food</h1>
+        </div>
+      </div>
+
+
+        <button data-answer="a" data-question="food" data-next="3" class="answer-button">A</button>
+        <button data-answer="b" data-question="food" data-next="3" class="answer-button">B</button>
+        <button data-answer="c" data-question="food" data-next="3" class="answer-button">C</button>
+  
+    </div>
+
+    <div class="slide slide3 hide">
+      <h1>3 videos games</h1>
+        <button data-answer="a" data-question="game" data-next="4" class="answer-button">A</button>
+        <button data-answer="b" data-question="game" data-next="4" class="answer-button">B</button>
+        <button data-answer="c" data-question="game" data-next="4" class="answer-button">C</button>
+  
+    </div>
+
+    <div class="slide slide4 hide">
+        <h1>4 Hackathons</h1>
+          <button data-answer="a" data-question="hackathons" data-next="5" class="answer-button">A</button>
+          <button data-answer="b" data-question="hackathons" data-next="5" class="answer-button">B</button>
+          <button data-answer="c" data-question="hackathons" data-next="5" class="answer-button">C</button>
+    
+    
+      </div>
+
+
+      <div class="slide slide5 hide">
+          <h1>5 Legalize drugs</h1>
+            <button data-answer="a" data-question="drugs" data-next="6" class="answer-button">A</button>
+            <button data-answer="b" data-question="drugs" data-next="6" class="answer-button">B</button>
+            <button data-answer="c" data-question="drugs" data-next="6" class="answer-button">C</button>
+      
+      
+        </div>
+
+
+
+      <div class="slide slide6 hide">
+          <h1>6  music</h1>
+            <button data-answer="a" data-question="music" data-next="7" class="answer-button">A</button>
+            <button data-answer="b" data-question="music" data-next="7" class="answer-button">B</button>
+            <button data-answer="c" data-question="music" data-next="7" class="answer-button">C</button>
+      
+      
+        </div>
+
+
+        <div class="slide slide7 hide">
+            <h1>7  vegan</h1>
+              <button data-answer="a" data-question="vegan" data-next="8" class="answer-button">A</button>
+              <button data-answer="b" data-question="vegan" data-next="8" class="answer-button">B</button>
+              <button data-answer="c" data-question="vegan" data-next="8" class="answer-button">C</button>
         
-        <h2>Food</h2>
-        <label for="sub_string"><input type="radio" name="sub" value="A" id="sub_string"/>Noodles</label>
-        <label for="sub_join"><input type="radio" name="sub" value="B" id="sub_join"/>Pizza</label>
-        <label for="sub_info"><input type="radio" name="sub" value="C" id="sub_info" />Ice cream</label>
         
-        <h2>Favorite Date</h2>
-        <label for="cat_string"><input type="radio" name="con" value="A" id="cat_string" />Club</label>
-        <label for="cat_join"><input type="radio" name="con" value="B" id="cat_join" />Movie</label>
-        <label for="cat_info"><input type="radio" name="con" value="C" id="cat_info" />Museum</label>
-        <label for="cat_condition"><input type="radio" name="con" value="D" id="cat_condition" />Fika</label>
-        
-        <h2>Video games?</h2>
-        <label for="if_string"><input type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input type="radio" name="ifstate" value="B" id="if_join" />N</label>
-        
-        <h2>Veganlicious</h2>
-        <label for="if_string"><input type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-        <h2>Legalize drugs?</h2>
-        <label for="if_string"><input type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-        <h2>Favorite music genre?</h2>
-        <label for="if_string"><input type="radio" name="ifstate" value="A" id="if_string" />Metal</label>
-        <label for="if_join"><input type="radio" name="ifstate" value="B" id="if_join" />RnB</label>
-        <label for="if_info"><input type="radio" name="con" value="C" id="cat_info" />Classic</label>
-        <label for="if_condition"><input type="radio" name="con" value="D" id="cat_condition" />Techno</label>
-
-        <h2>Is AI good for humanity</h2>
-        <label for="if_string"><input type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input type="radio" name="ifstate" value="B" id="if_join" />N</label>
+          </div>
 
 
-        <button type="submit" value="Submit">Submit</button>
-        </form>
+          <div class="slide slide8 hide">
+              <h1>8  humanity</h1>
+                <button data-answer="a" data-question="humanity" data-next="9" class="answer-button">A</button>
+                <button data-answer="b" data-question="humanity" data-next="9" class="answer-button">B</button>
+                <button data-answer="c" data-question="humanity" data-next="9" class="answer-button">C</button>
+          
+          
+            </div>
+
+
+
+
+          <div class="slide slide9 hide">
+              <h1>9  Date</h1>
+                <button data-answer="a" data-question="date" data-next="10" class="answer-button">A</button>
+                <button data-answer="b" data-question="date" data-next="10" class="answer-button">B</button>
+                <button data-answer="c" data-question="date" data-next="10" class="answer-button">C</button>
+          
+          
+            </div>
+  
+
+
+  </div>
 
 
 
 
 
-    <form action="" method="post">
 
-        <input class="quiz-question" type="radio" name="gender" value="male" checked> Male<br>
-        <input class="quiz-question" type="radio" name="gender" value="female"> Female<br>
-        <input class="quiz-question" type="radio" name="gender" value="other"> Other<br>
-        <button>Send my greetings</button>
-    </form>
 
-  <p class="test" >Hello, world!</p>
+
+
+
+
+
+
+
 
   <script>
-    class Quiz 
 
-      
+var startButton = document.getElementById("start-button");
+
+
+var usersName = "";
+
+console.log(startButton);
+
+
+
+startButton.addEventListener("click", () => {
+      var name = document.querySelector("#name-input");
+      usersName = name.value;
+
+
+      document.querySelector(".slide0").classList.add("hide");
+      document.querySelector(".slide1").classList.remove("hide");
+
+
+    })
+
+
+
+    var allAnswers = [];
+    var answerButtons = document.getElementsByClassName("answer-button");
+    var slides = document.getElementsByClassName("slide");
+
+    Array.from(answerButtons).forEach(e => e.addEventListener("click", (e)=> {
+      var button = e.target;
+      // hide all
+
+
+      var question = button.dataset.question;
+      var answer = button.dataset.answer;
+
+      if (button.dataset.next == 10) {
+        console.log("the end");
+        allAnswers.push({question, answer});
+
+        sendAnswers(allAnswers);
+      } else {
+        Array.from(slides).forEach(e => e.classList.add("hide"));
+
+        // show next
+        var next = "slide" + button.dataset.next;
+        var nextEl = document.querySelector("."+next)
+        nextEl.classList.remove("hide");
+        // caputure question
+
+        var question = button.dataset.question;
+        var answer = button.dataset.answer;
+        // capture anser
+        allAnswers.push({question, answer});
+
+
+
+      }
+
+      console.log(allAnswers)
+
+
+    }));
+
+
+    function sendAnswers(answer){
+      // Sending and receiving data in JSON format using POST method
+      //
+      var xhr = new XMLHttpRequest();
+      var url = "url";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+              var json = JSON.parse(xhr.responseText);
+              console.log(json.email + ", " + json.password);
+          }
+      };
+      var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
+      xhr.send(data);
+    }
+    
   </script>
-
 </body>
 
 </html>
