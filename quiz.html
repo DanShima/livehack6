@@ -136,10 +136,25 @@ button:hover {
   text-align: center;
 }
 
-.wait {
-  font-size: 50px;
+#waitText {
+  margin-top: 800px;
+  font-size: 80px;
   text-align: center;
+  animation: cssAnimation1 0s 5s forwards;
+  visibility: visible;
 }
+
+#showMe {
+ animation: cssAnimation 0s 5s forwards;
+ visibility: hidden;
+}
+@keyframes cssAnimation {
+ to   { visibility: visible; }
+}
+@keyframes cssAnimation1 {
+ to   { visibility: hidden; }
+}
+
 </style>
 
 <body>
@@ -269,11 +284,34 @@ button:hover {
                 <button data-answer="a" data-question="date" data-next="10" class="answer-button">Yes</button>
                 <button data-answer="b" data-question="date" data-next="10" class="answer-button">No</button>
                 <button data-answer="c" data-question="date" data-next="10" class="answer-button">Not sure</button>
+
+
             </div>
 
-            <div class="wait">
-              <h1>WAIT...</h1>
+
+            <div class="slide slide10 hide">
+
+              
+                <div class="wait">
+                    <h1 id="waitText">WAIT...</h1>
+                    <div id="showMe">HELLOW!</div>
+                  </div>
+
+                  <img src="./Img/CrocDoctor1.png" alt="If you can see this, then the image didn't load properly" class="myclass1" />
             </div>
+
+
+            <!-- <div class="slide slide10 hide">
+              <div class="wait">
+                  <h1 id="waitText">WAIT...</h1>
+                  <h1 id="imageMatch">HELLOW!</h1>
+                </div>
+          </div> -->
+
+          
+            
+
+            
   </div>
 
 
@@ -292,29 +330,11 @@ startButton.addEventListener("click", () => {
       var name = document.querySelector("#name-input");
       usersName = name.value;
 
-
       document.querySelector(".slide0").classList.add("hide");
       document.querySelector(".slide1").classList.remove("hide");
 
-
-
-      var xhr = new XMLHttpRequest();
-      var url = "/connect";
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-              var json = JSON.parse(xhr.responseText);
-              console.log(json.email + ", " + json.password);
-          }
-      };
-      var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
-      xhr.send(data);
-
-
+      
     })
-
-
 
     var allAnswers = [];
     var answerButtons = document.getElementsByClassName("answer-button");
@@ -330,9 +350,9 @@ startButton.addEventListener("click", () => {
 
       if (button.dataset.next == 10) {
         console.log("the end");
-        allAnswers.push({question, answer});
+        showImage();
 
-        sendAnswers(allAnswers);
+       
       } else {
         Array.from(slides).forEach(e => e.classList.add("hide"));
 
@@ -356,24 +376,44 @@ startButton.addEventListener("click", () => {
 
     }));
 
+    function showImage(){
+      document.querySelector(".slide9").classList.add("hide");
 
-    function sendAnswers(answer){
-      // Sending and receiving data in JSON format using POST method
-      //
-      var xhr = new XMLHttpRequest();
-      var url = "url";
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-              var json = JSON.parse(xhr.responseText);
-              console.log(json.email + ", " + json.password);
-          }
-      };
-      var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
-      xhr.send(data);
-    }
+      document.querySelector(".slide10").classList.remove("hide");
+      
+
+    }           
+
     
+
+
+
+    var theImages = new Array() // do not change this
+    // To add more image files, continue with the
+    // pattern below, adding to the array.
+
+    theImages[0] = 'CrocDoc1.png'
+    theImages[1] = 'CrocDoc2.png'
+    theImages[2] = 'CrocHunter1.png'
+    theImages[3] = 'CrocHunter2.png'
+
+    // do not edit anything below this line
+
+    var j = 0
+    var p = theImages.length;
+    var preBuffer = new Array()
+    for (i = 0; i < p; i++){
+      preBuffer[i] = new Image()
+      preBuffer[i].src = theImages[i]
+    }
+    var whichImage = Math.round(Math.random()*(p-1));
+
+
+
+    function showImage(){
+    document.write('<img src="'+theImages[whichImage]+'">');
+    }
+
   </script>
 </body>
 
