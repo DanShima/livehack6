@@ -2,135 +2,263 @@
 <html>
 
 <head>
+  <script>//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js</script>
   <meta charset="utf-8">
   <title></title>
-    <style>
-        .slider-container {
-          width: 100%;
-          height: 800px;
-        }
+<style>
+@import url(https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap);
+/* Defaults */
+html, body, #quizzie {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 
+* {
+  box-sizing: border-box;
+}
 
-        .slide {
-          border: solid red 2px;
-        }
+body {
+  background: #cfe5cc;
+  color: #fff;
+}
 
+h1 {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 2.5em;
+}
 
+h2, p {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 2em;
+}
 
-        .hide {
-          display: none;
-        }
+h1, h2, p {
+  text-align: center;
+  display: block;
+  width: auto;
+  margin: 1%;
+}
 
-
-        .show {
-          display: block;
-        }
-
-    </style>
+#quizzie {
+  padding: 5% 0;
+  /* Individual Steps/Sections */
+  /* Content */
+}
+#quizzie ul {
+  list-style: none;
+  display: block;
+  width: auto;
+  margin: 2% 2%;
+  padding: 2%;
+  overflow: auto;
+  display: none;
+  /* Step Questions and Answer Options */
+}
+#quizzie ul.current {
+  display: block;
+}
+#quizzie ul li {
+  display: inline-block;
+  float: left;
+  width: 49%;
+  margin-right: 2%;
+  overflow: auto;
+  text-align: center;
+}
+#quizzie ul li.quiz-answer {
+  cursor: pointer;
+}
+#quizzie ul li.question, #quizzie ul li.results-inner {
+  display: block;
+  float: none;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2%;
+}
+#quizzie ul li.results-inner {
+  padding: 5% 2%;
+}
+#quizzie ul li.results-inner img {
+  width: 250px;
+}
+#quizzie ul li:last-child {
+  margin-right: 0;
+}
+#quizzie .question-wrap, #quizzie .answer-wrap {
+  display: block;
+  padding: 1%;
+  margin: 1em 10%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#quizzie .answer-wrap {
+  background: #47c070;
+  -moz-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+#quizzie .answer-wrap:hover {
+  background: #2178ae;
+}
+</style>
 </head>
 
 <body>
-
-
-  <div class="slider-container">
+<div class="slider-container">
     <div class="slide1 slide">
-        <h2>Tool</h2>
+      <div id="quizzie">
+        <h1>Match Us Quiz</h1>
+        <div class="slide1 slide">
+          <ul class="quiz-step step1 current">
+              <li class="question">
+                  <div class="question-wrap">
+                      <h2>Question #1: tool</h2>
+                  </div>
+              </li>
+              <li class="quiz-answer low-value" data-questionNumber="1" value="A">
+                  <div class="answer-wrap"> 
+                      <p class="answer-text">iOs</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="1" value="B">
+                  <div class="answer-wrap"> 
+                      <p class="answer-text">Android</p>
+                  </div>
+              </li>
+          </ul>
+          </div>
 
-        <label for="var_string"><button  data-questionNumber="1" class="myButton" type="radio" name="variable" value="A" />Apple</button>
-        <label for="var_join"><button data-questionNumber="1"  class="myButton" type="radio" name="variable" value="B"  />Windows</button>
-        <label for="var_info"><button data-questionNumber="1"  class="myButton" type="radio" name="variable" value="C"  />Linux</button>
-          <br>
+          <div class="slide2 slide hide">
+          <ul class="quiz-step step2">
+              <li class="question">
+                  <div class="question-wrap">
+                      <p>Question #2: Food</p>
+                  </div>
+              </li>
+              <li class="quiz-answer low-value" data-questionNumber="2" value="A">
+                  <div class="answer-wrap"> 
+                      <p class="answer-text">Noodles</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="2" value="B">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Pizza</p>
+                  </div>
+              </li>
+          </ul>
+          </div>
+
+          <div class="slide3 slide hide">
+          <ul class="quiz-step step3">
+              <li class="question">
+                  <div class="question-wrap">
+                      <p>Question #3: Video Games</p>
+                  </div>
+              </li>
+              <li class="quiz-answer low-value" data-questionNumber="3" value="A">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Y</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="3" value="B">
+                  <div class="answer-wrap">
+                      <p class="answer-text">N</p>
+                  </div>
+              </li>
+          </ul>
+          </div>
+
+          <div class="slide4 slide hide">
+          <ul class="quiz-step step4">
+              <li class="question">
+                  <div class="question-wrap">
+                      <p>Question #4: Hackathons</p>
+                  </div>
+              </li>
+              <li class="quiz-answer low-value" data-questionNumber="4" value="A">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Y</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="4" value="B">
+                  <div class="answer-wrap">
+                      <p class="answer-text">N</p>
+                  </div>
+              </li>
+          </ul>
+          </div>
 
 
-        <button class="next"data-next="2">Next</button>
-      
-    </div>
-    <div class="slide2 slide hide">
+          <div class="slide5 slide hide">
+          <ul class="quiz-step step5">
+              <li class="question">
+                  <div class="question-wrap">
+                      <p>Question #5: Legalize drugs</p>
+                  </div>
+              </li>
+              <li class="quiz-answer low-value" data-questionNumber="5" value="A">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Y</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="5" value="B">
+                  <div class="answer-wrap">
+                      <p class="answer-text">N</p>
+                  </div>
+              </li>
+          </ul>
+          </div>
 
-        <h2>Food</h2>
-        <label for="sub_string"><button  data-questionNumber="2" class="myButton" type="radio" name="sub" value="A" />Noodles</button>
-        <label for="sub_join"><button data-questionNumber="2" class="myButton" type="radio" name="sub" value="B" />Pizza</button>
-        <label for="sub_info"><button data-questionNumber="2" class="myButton" type="radio" name="sub" value="C"  />Ice cream</button>
-        
-      
+          <div class="slide6 slide hide">
+          <ul class="quiz-step step6">
+              <li class="question">
+                  <div class="question-wrap">
+                      <p>Question #6: Music</p>
+                  </div>
+              </li>
+              <li class="quiz-answer low-value" data-questionNumber="6" value="A">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Metal</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="6" value="B">
+                  <div class="answer-wrap">
+                      <p class="answer-text">RnB</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="6" value="C">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Classic</p>
+                  </div>
+              </li>
+              <li class="quiz-answer high-value" data-questionNumber="6" value="D">
+                  <div class="answer-wrap">
+                      <p class="answer-text">Techno</p>
+                  </div>
+              </li>
+          </ul>
+          </div>
+
+
+          <ul id="results">
+              <li class="results-inner">
+                  <p>Your result is:</p>
+                  <h1></h1>
+                  <p class="desc"></p>
+              </li>
+          </ul>
+      </div>
+      </div>
       </div>
 
-      <div class="slide3 slide hide">
+<script>
 
-          <h2>Favorite Date</h2>
-          <label for="cat_string"><button data-questionNumber="3" class="myButton" type="radio" name="con" value="A" id="cat_string" />Club</button>
-          <label for="cat_join"><button data-questionNumber="3" class="myButton" type="radio" name="con" value="B" id="cat_join" />Movie</button>
-          <label for="cat_info"><button data-questionNumber="3" class="myButton" type="radio" name="con" value="C" id="cat_info" />Museum</button>
-          <label for="cat_condition"><button data-questionNumber="3" lass="myButton" type="radio" name="con" value="D" id="cat_condition" />Fika</button>
-          
-      
-        </div>
-        
-
-        <div class="slide4 slide hide">
-            <h2>Video games?</h2>
-          <label for="if_string"><button data-questionNumber="4" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</button>
-            <label for="if_join"><button data-questionNumber="4" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</button>
-
-        </div>
-
-
-
-  </div>
-
-
-
-
-
-
-
-  <br><br><br><br><br>
-    <form id="form1">
-
-        
-        
-      
-      
-        
-        <h2>Veganlicious</h2>
-        <label for="if_string"><input data-questionNumber="5" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input data-questionNumber="5" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-        <h2>Legalize drugs?</h2>
-        <label for="if_string"><input data-questionNumber="6" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input data-questionNumber="6" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-        <h2>Favorite music genre?</h2>
-        <label for="if_string"><input data-questionNumber="7" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Metal</label>
-        <label for="if_join"><input data-questionNumber="7" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />RnB</label>
-        <label for="if_info"><input data-questionNumber="7" class="myButton" type="radio" name="con" value="C" id="cat_info" />Classic</label>
-        <label for="if_condition"><input data-questionNumber="7" class="myButton" type="radio" name="con" value="D" id="cat_condition" />Techno</label>
-
-        <h2>Is AI good for humanity</h2>
-        <label for="if_string"><input data-questionNumber="8" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input data-questionNumber="8" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-
-        <h2>Hackatan</h2>
-        <label for="if_string"><input data-questionNumber="9" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
-        <label for="if_join"><input data-questionNumber="9" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-
-        <button type="submit" value="Submit">Submit</button>
-        </form>
-
-
-
-
-
-
-
-  <p class="test" >Hello, world!</p>
-
-  <script>
-
-
-    var radios = document.getElementsByClassName("myButton");
+var radios = document.getElementsByClassName("myButton");
     var nexts = document.getElementsByClassName("next");
 
 
@@ -165,8 +293,6 @@
 
 
     }
-
-      
   </script>
 
 </body>
