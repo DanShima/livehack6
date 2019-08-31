@@ -11,13 +11,9 @@
   * {
     margin: 0;
     padding: 0;
-    border-box
+    box-sizing: border-box !important;
   }
 
-
-  *:not(.classname){
-  box-sizing : border-box;
-}
 
 body {
   background: #cfe5cc;
@@ -271,6 +267,21 @@ startButton.addEventListener("click", () => {
 
       document.querySelector(".slide0").classList.add("hide");
       document.querySelector(".slide1").classList.remove("hide");
+
+
+
+      var xhr = new XMLHttpRequest();
+      var url = "/connect";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+              var json = JSON.parse(xhr.responseText);
+              console.log(json.email + ", " + json.password);
+          }
+      };
+      var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
+      xhr.send(data);
 
 
     })
