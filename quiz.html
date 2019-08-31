@@ -239,12 +239,12 @@ button:hover {
       <div class="slide slide6 hide">
           <div class="outer">
               <div class="inner">
-          <h1>#6 HACKATHONS?</h1>
+          <h1>#6 BDSM?</h1>
           </div>
           </div>
             <button data-answer="a" data-question="music" data-next="7" class="answer-button">Yes</button>
             <button data-answer="b" data-question="music" data-next="7" class="answer-button">No</button>
-            <button data-answer="c" data-question="music" data-next="7" class="answer-button">Don't care</button>
+            <button data-answer="c" data-question="music" data-next="7" class="answer-button">B...whut?</button>
       
       
         </div>
@@ -300,19 +300,6 @@ button:hover {
 
        
             </div>
-
-
-            <!-- <div class="slide slide10 hide">
-              <div class="wait">
-                  <h1 id="waitText">WAIT...</h1>
-                  <h1 id="imageMatch">HELLOW!</h1>
-                </div>
-          </div> -->
-
-          
-            
-
-            
   </div>
 
 
@@ -324,6 +311,13 @@ var startButton = document.getElementById("start-button");
 var usersName = "";
 
 console.log(startButton);
+
+var myPix = new Array("Img/CrocDoctor1.png","Img/CrocDoctor2.png","Img/CrocHunter1.png");
+
+var picture = function choosePic() {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     document.getElementById("imageMatch").src = myPix[randomNum];
+}
 
 
 
@@ -389,9 +383,9 @@ startButton.addEventListener("click", () => {
 
 
 
-    var theImages = new Array() // do not change this
-    // To add more image files, continue with the
-    // pattern below, adding to the array.
+    // var theImages = new Array() // do not change this
+    // // To add more image files, continue with the
+    // // pattern below, adding to the array.
 
     theImages[0] = 'CrocDoctor1.png';
     theImages[1] = 'CrocDoctor2.png';
@@ -420,7 +414,7 @@ startButton.addEventListener("click", () => {
     theImages[15] = 'ElephantDoctor2.png';
 
 
-    // do not edit anything below this line
+    // // do not edit anything below this line
 
   var random = theImages[Math.floor(Math.random() * theImages.length)];
 
