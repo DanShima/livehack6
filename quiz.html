@@ -144,7 +144,7 @@ button:hover {
   visibility: visible;
 }
 
-#showMe {
+.showMe {
  animation: cssAnimation 0s 5s forwards;
  visibility: hidden;
 }
@@ -294,10 +294,11 @@ button:hover {
               
                 <div class="wait">
                     <h1 id="waitText">WAIT...</h1>
-                    <div id="showMe">HELLOW!</div>
+                
+                    <img id="myImg" class ="showMe" alt="If you can see this, then the image didn't load properly" />
                   </div>
 
-                  <img src="./Img/CrocDoctor1.png" alt="If you can see this, then the image didn't load properly" class="myclass1" />
+       
             </div>
 
 
@@ -392,27 +393,53 @@ startButton.addEventListener("click", () => {
     // To add more image files, continue with the
     // pattern below, adding to the array.
 
-    theImages[0] = 'CrocDoc1.png'
-    theImages[1] = 'CrocDoc2.png'
-    theImages[2] = 'CrocHunter1.png'
-    theImages[3] = 'CrocHunter2.png'
+    theImages[0] = 'CrocDoctor1.png';
+    theImages[1] = 'CrocDoctor2.png';
+    theImages[2] = 'CrocHunter1.png';
+    theImages[3] = 'CrocHunter2.png';
+
+    theImages[4] = 'DogArt1.png';
+    theImages[5] = 'DogArt2.png';
+    theImages[6] = 'DogBar1.png';
+    theImages[7] = 'DogBar2.png';
+    theImages[8] = 'DogDoctor1.png';
+    theImages[9] = 'DogDoctor2.png';
+
+
+
+
+    theImages[10] = 'ElephantBar1.png';
+    theImages[11] = 'ElephantBar2.png';
+    theImages[12] = 'ElephantDesigner1.png';
+    theImages[13] = 'ElephantDesigner2.png';
+
+
+
+
+    theImages[14] = 'ElephantDoctor1.png';
+    theImages[15] = 'ElephantDoctor2.png';
+
 
     // do not edit anything below this line
 
-    var j = 0
-    var p = theImages.length;
-    var preBuffer = new Array()
-    for (i = 0; i < p; i++){
-      preBuffer[i] = new Image()
-      preBuffer[i].src = theImages[i]
-    }
-    var whichImage = Math.round(Math.random()*(p-1));
+  var random = theImages[Math.floor(Math.random() * theImages.length)];
+
+
+  var mySrc = "/Img/" + random;
+
+
+  var imggg = document.getElementById("myImg");
+
+  console.log(imggg);
+   
+document.getElementById("myImg").src = mySrc;
 
 
 
-    function showImage(){
-    document.write('<img src="'+theImages[whichImage]+'">');
-    }
+
+
+
+
 
   </script>
 </body>
