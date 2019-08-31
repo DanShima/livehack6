@@ -6,21 +6,20 @@
 </head>
 
 <style>
-
-
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
   }
 
-
 body {
   background: #cfe5cc;
   color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
-
-
 
 .slider-container {
   width: 100%;
@@ -37,23 +36,24 @@ body {
   width: 100%;
   height: 100%;
   padding: 20px;
+  text-align:center;
 }
 
 .outer {
+  margin-top: 200px;
+  padding-top: 200px;
   border-radius: 15px;
   background-color: salmon;
   height: 500px;
-  margin: 0 auto;
-
+  display: block;
+  text-align: center;
 }
 
 .inner {
-
+  font-size: 40px;
+  text-align: center;
   border-radius: 15px;
   background-color: salmon;
-
-
-
 }
 
 .hide {
@@ -79,6 +79,15 @@ button {
   border-radius: 24px;
   background: #47C070;
   color: white;
+}
+
+.answer-button {
+  width: 600px;
+  height: 200px;
+  font-size: 4em;
+  margin: 60px;
+  padding: 5%;
+  border-radius: 1em;
 }
 
 .slide0 {
@@ -110,11 +119,10 @@ button {
   text-align: center;
 }
 
-
-
-
-
-
+.wait {
+  font-size: 50px;
+  text-align: center;
+}
 </style>
 
 <body>
@@ -128,9 +136,6 @@ button {
             
             <input id="name-input" type="text" name="firstname" placeholder="Type your name:">
             <br>
-
-
-
             <Button id="start-button">
             Let's start
             </Button>
@@ -141,7 +146,7 @@ button {
      
         <div class="outer">
         <div class="inner">
-          <h1>#1 tools</h1>
+          <h1>#1 TOOLS</h1>
         </div>
       </div>
         <button data-answer="a" data-question="tool" data-next="2" class="answer-button btn-1 icon-forward">Apple</button>
@@ -152,7 +157,7 @@ button {
     <div class="slide slide2 hide">
       <div class="outer">
         <div class="inner">
-          <h1>#2 food</h1>
+          <h1>#2 FOOD</h1>
         </div>
       </div>
         <button data-answer="a" data-question="food" data-next="3" class="answer-button">Noodles</button>
@@ -162,7 +167,11 @@ button {
     </div>
 
     <div class="slide slide3 hide">
-      <h1>#3 A date in</h1>
+        <div class="outer">
+            <div class="inner">
+      <h1>#3 A DATE IN</h1>
+      </div>
+      </div>
         <button data-answer="a" data-question="game" data-next="4" class="answer-button">Club</button>
         <button data-answer="b" data-question="game" data-next="4" class="answer-button">Cinema</button>
         <button data-answer="c" data-question="game" data-next="4" class="answer-button">Cafe/bar</button>
@@ -170,7 +179,11 @@ button {
     </div>
 
     <div class="slide slide4 hide">
-        <h1>#4 video games?</h1>
+        <div class="outer">
+            <div class="inner">
+        <h1>#4 VIDEO GAMES?</h1>
+        </div>
+        </div>
           <button data-answer="a" data-question="hackathons" data-next="5" class="answer-button">Yes</button>
           <button data-answer="b" data-question="hackathons" data-next="5" class="answer-button">No</button>
           <button data-answer="c" data-question="hackathons" data-next="5" class="answer-button">Don't care</button>
@@ -179,7 +192,11 @@ button {
       </div>
 
       <div class="slide slide5 hide">
-          <h1>#5 vegan</h1>
+          <div class="outer">
+              <div class="inner">
+          <h1>#5 VEGAN</h1>
+          </div>
+          </div>
             <button data-answer="a" data-question="drugs" data-next="6" class="answer-button">Yes</button>
             <button data-answer="b" data-question="drugs" data-next="6" class="answer-button">No</button>
             <button data-answer="c" data-question="drugs" data-next="6" class="answer-button">What's that</button>
@@ -188,7 +205,11 @@ button {
         </div>
 
       <div class="slide slide6 hide">
-          <h1>#6 hackathons?</h1>
+          <div class="outer">
+              <div class="inner">
+          <h1>#6 HACKATHONS?</h1>
+          </div>
+          </div>
             <button data-answer="a" data-question="music" data-next="7" class="answer-button">Yes</button>
             <button data-answer="b" data-question="music" data-next="7" class="answer-button">No</button>
             <button data-answer="c" data-question="music" data-next="7" class="answer-button">Don't care</button>
@@ -197,7 +218,11 @@ button {
         </div>
 
         <div class="slide slide7 hide">
-            <h1>#7 legalize drugs?</h1>
+            <div class="outer">
+                <div class="inner">
+            <h1>#7 LEGALIZE DRUGS?</h1>
+            </div>
+            </div>
               <button data-answer="a" data-question="vegan" data-next="8" class="answer-button">Yes</button>
               <button data-answer="b" data-question="vegan" data-next="8" class="answer-button">No</button>
               <button data-answer="c" data-question="vegan" data-next="8" class="answer-button">What's that?</button>
@@ -206,7 +231,11 @@ button {
           </div>
 
           <div class="slide slide8 hide">
-              <h1>#8 music</h1>
+              <div class="outer">
+                  <div class="inner">
+              <h1>#8 MUSIC</h1>
+              </div>
+              </div>
                 <button data-answer="a" data-question="humanity" data-next="9" class="answer-button">Metal</button>
                 <button data-answer="b" data-question="humanity" data-next="9" class="answer-button">Techno</button>
                 <button data-answer="c" data-question="humanity" data-next="9" class="answer-button">Pop/RnB</button>
@@ -215,10 +244,18 @@ button {
             </div>
 
           <div class="slide slide9 hide">
-              <h1>#9  is AI bad for humanity?</h1>
+              <div class="outer">
+                  <div class="inner">
+              <h1>#9  IS AI BAD FOR HUMANITY?</h1>
+              </div>
+              </div>
                 <button data-answer="a" data-question="date" data-next="10" class="answer-button">Yes</button>
                 <button data-answer="b" data-question="date" data-next="10" class="answer-button">No</button>
                 <button data-answer="c" data-question="date" data-next="10" class="answer-button">Not sure</button>
+            </div>
+
+            <div class="wait">
+              <h1>WAIT...</h1>
             </div>
   </div>
 
