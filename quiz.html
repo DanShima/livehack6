@@ -2,43 +2,32 @@
 <html>
 
 <head>
+  <script>//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js</script>
   <meta charset="utf-8">
   <title></title>
-    <style>
-        .slider-container {
-          width: 100%;
-          height: 800px;
-        }
+<style>
 
+.hide {
+  display: none;
+}
 
-        .slide {
-          border: solid red 2px;
-        }
-
-
-
-        .hide {
-          display: none;
-        }
-
-
-        .show {
-          display: block;
-        }
-
-    </style>
+.show {
+  display: block;
+}
+</style>
 </head>
 
 <body>
 
 
-  <div class="slider-container">
+<div class="slider-container">
     <div class="slide1 slide">
-        <h2>Tool</h2>
+        <div id="quizzie">
+        <h2 class="question question-wrap">Tool</h2>
 
-        <label for="var_string"><button data-next="2" data-questionNumber="1" class="myButton" type="radio" name="variable" value="A" />Apple</button>
-        <label for="var_join"><button data-next="2" data-questionNumber="1"  class="myButton" type="radio" name="variable" value="B"  />Windows</button>
-        <label for="var_info"><button data-next="2" data-questionNumber="1"  class="myButton" type="radio" name="variable" value="C"  />Linux</button>
+       <button  data-next="2" class="quiz-answer answer-wrap" type="radio" name="variable" value="1:A"> Apple</button>
+        <button  data-next="2"  class="quiz-answer answer-wrap" type="radio" name="variable" value="1:B" >Windows</button>
+       <button  data-next="2"  class="quiz-answer answer-wrap" type="radio" name="variable" value="1.C" >Linux</button>
           <br>
 
 
@@ -47,10 +36,10 @@
     </div>
     <div class="slide2 slide hide">
 
-        <h2>Food</h2>
-        <label for="sub_string"><button  data-next="3" data-questionNumber="2" class="myButton" type="radio" name="sub" value="A" />Noodles</button>
-        <label for="sub_join"><button data-next="3" data-questionNumber="2" class="myButton" type="radio" name="sub" value="B" />Pizza</button>
-        <label for="sub_info"><button data-next="3" data-questionNumber="2" class="myButton" type="radio" name="sub" value="C"  />Ice cream</button>
+        <h2 class="question question-wrap">Food</h2>
+        <label for="sub_string"><button  data-next="3" data-questionNumber="2" class="quiz-answer answer-wrap" type="radio" name="sub" value="A" />Noodles</button>
+        <label for="sub_join"><button data-next="3" data-questionNumber="2" class="quiz-answer answer-wrap" type="radio" name="sub" value="B" />Pizza</button>
+        <label for="sub_info"><button data-next="3" data-questionNumber="2" class="quiz-answer answer-wrap" type="radio" name="sub" value="C"  />Ice cream</button>
         
       
         
@@ -59,20 +48,20 @@
 
       <div class="slide3 slide hide">
 
-          <h2>Favorite Date</h2>
-          <label for="cat_string"><button data-next="4" data-questionNumber="3" class="myButton" type="radio" name="con" value="A" id="cat_string" />Club</button>
-          <label for="cat_join"><button data-next="4" data-questionNumber="3" class="myButton" type="radio" name="con" value="B" id="cat_join" />Movie</button>
-          <label for="cat_info"><button data-next="4" data-questionNumber="3" class="myButton" type="radio" name="con" value="C" id="cat_info" />Museum</button>
-          <label for="cat_condition"><button data-next="4" data-questionNumber="3" lass="myButton" type="radio" name="con" value="D" id="cat_condition" />Fika</button>
+          <h2 class="question question-wrap">Favorite Date</h2>
+          <label for="cat_string"><button data-next="4" data-questionNumber="3" class="quiz-answer answer-wrap" type="radio" name="con" value="A" id="cat_string" />Club</button>
+          <label for="cat_join"><button data-next="4" data-questionNumber="3" class="quiz-answer answer-wrap" type="radio" name="con" value="B" id="cat_join" />Movie</button>
+          <label for="cat_info"><button data-next="4" data-questionNumber="3" class="quiz-answer answer-wrap" type="radio" name="con" value="C" id="cat_info" />Museum</button>
+          <label for="cat_condition"><button data-next="4" data-questionNumber="3" lass="quiz-answer answer-wrap" type="radio" name="con" value="D" id="cat_condition" />Fika</button>
           
       
         </div>
         
 
         <div class="slide4 slide hide">
-            <h2>Video games?</h2>
-          <label for="if_string"><button data-next="5" data-questionNumber="4" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</button>
-            <label for="if_join"><button data-next="5" data-questionNumber="4" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</button>
+            <h2 class="question question-wrap">Video games?</h2>
+          <label for="if_string"><button data-next="5" data-questionNumber="4" class="quiz-answer answer-wrap" type="radio" name="ifstate" value="A" id="if_string" />Y</button>
+            <label for="if_join"><button data-next="5" data-questionNumber="4" class="quiz-answer answer-wrap" type="radio" name="ifstate" value="B" id="if_join" />N</button>
 
 
 
@@ -86,9 +75,9 @@
       
         <div class="slide5 slide hide">
         
-        <h2>Veganlicious</h2>
-        <label for="if_string"><button data-next="6" data-questionNumber="5" class="myButton" type="radio" name="ifstate" value="A" id="if_string">Y</label>
-        <label for="if_join"><button data-next="6" data-questionNumber="5" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
+        <h2 class="question question-wrap">Veganlicious</h2>
+        <label for="if_string"><button data-next="6" data-questionNumber="5" class="quiz-answer answer-wrap" type="radio" name="ifstate" value="A" id="if_string">Y</label>
+        <label for="if_join"><button data-next="6" data-questionNumber="5" class="quiz-answer answer-wrap" type="radio" name="ifstate" value="B" id="if_join" />N</label>
 
 
         </div>
@@ -97,7 +86,7 @@
 
         <div class="slide6 slide hide">
 
-        <h2>Legalize drugs?</h2>
+        <h2 class="question question-wrap">Legalize drugs?</h2>
         <label for="if_string"><input data-next="7" data-questionNumber="6" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
         <label for="if_join"><input data-next="7" data-questionNumber="6" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
 
@@ -109,7 +98,7 @@
         <div class="slide7 slide hide">
 
 
-        <h2>Favorite music genre?</h2>
+        <h2 class="question question-wrap">Favorite music genre?</h2>
         <label for="if_string"><input data-next="8" data-questionNumber="7" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Metal</label>
         <label for="if_join"><input data-next="8" data-questionNumber="7" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />RnB</label>
         <label for="if_info"><input data-next="8" data-questionNumber="7" class="myButton" type="radio" name="con" value="C" id="cat_info" />Classic</label>
@@ -127,80 +116,47 @@
 
         <div class="slide8 slide hide">
 
-        <h2>Is AI good for humanity</h2>
+        <h2 class="question question-wrap">Is AI good for humanity</h2>
         <label for="if_string"><input data-next="9" data-questionNumber="8" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
         <label for="if_join"><input data-next="9" data-questionNumber="8" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
-
-
-  
-
-
         </div>
 
-
-
-
-
         <div class="slide9 slide hide">
-
-
-        <h2>Hackatan</h2>
+        <h2 class="question question-wrap">Hackatan</h2>
         <label for="if_string"><input data-questionNumber="9" class="myButton" type="radio" name="ifstate" value="A" id="if_string" />Y</label>
         <label for="if_join"><input data-questionNumber="9" class="myButton" type="radio" name="ifstate" value="B" id="if_join" />N</label>
+
+        </div>
 
         </div>
 
   </div>
 
 
+<script>
+
+  var allAnswers = [];
+
+  var lastAnswer = "";
 
 
+  var quizAnswers = document.getElementsByClassName("quiz-answer");
 
-
-
-  <script>
-
-
-
-    var allAnswers = [];
-
-    var lastAnswer = "";
-
-    var radios = document.getElementsByClassName("myButton");
-    var nexts = document.getElementsByClassName("next");
 
 
     var slides = document.getElementsByClassName("slide");
 
 
 
-
-    Array.from(nexts).forEach(element => {
+    console.log(slides);
+    Array.from(quizAnswers).forEach(element => {
       element.addEventListener("click", function(e) {
 
 
 
-        console.log(e.target.dataset.next);
 
 
-       
-
-
-
-
-
-
-
-      })
-    });
-
-
-
-    //console.log("radios: ", radios);
-    
-    Array.from(radios).forEach(element => {
-      element.addEventListener("click", function(e) {
-
+     
 
         Array.from(slides).forEach(e => e.classList.add("hide"));
 
@@ -215,11 +171,20 @@
 
         allAnswers.push(lastAnswer);
 
-
-
+        console.log("Dataset: ", e.target.dataset.next)
 
         var next = "slide" + e.target.dataset.next;
+
+
+
+
+
+
+        var nextElement = document.getElementsByClassName(next)[0];
+
+        console.log("next:", nextElement);
        document.getElementsByClassName(next)[0].classList.remove("hide");
+       document.getElementsByClassName(next)[0].classList.add("show");
 
 
        console.log(allAnswers);
@@ -229,18 +194,7 @@
       })
     });
 
-    
-    class Quiz {
-      constructor() {
-        this._answers = [];
-        
-      }
-
-
-
-    }
-
-      
+   
   </script>
 
 </body>
