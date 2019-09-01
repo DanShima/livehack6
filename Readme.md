@@ -1,7 +1,7 @@
 ## Team 3 Unicupid at LiveHacks
 
 Break the ice at a party or try something playful for speed dating? Look no further!
-This one-day event project matches you with a partner with similar interests and mindset as you through quiz and minigame.
+This one-day hackathon project focuses on enchancing social interaction at events and matches you with a partner with similar interests and mindset as you through quiz and minigame.
 
 ### Features
 - quiz with multiple choice questions
